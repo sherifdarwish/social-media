@@ -1,0 +1,57 @@
+# Core Flask and Web Framework
+flask==3.0.0
+flask-cors==4.0.0
+flask-jwt-extended==4.6.0
+flask-limiter==3.5.0
+flask-sqlalchemy==3.1.1
+gunicorn==21.2.0
+
+# Database
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+alembic==1.13.1
+
+# Caching and Session Management
+redis==5.0.1
+
+# HTTP Requests and API Integration
+requests==2.31.0
+httpx==0.25.2
+aiohttp==3.9.1
+
+# Payment Processing
+stripe==7.8.0
+
+# Authentication and Security
+cryptography==42.0.8
+pyjwt==2.8.0
+werkzeug==3.1.3
+
+# Data Validation and Serialization
+pydantic==2.5.0
+marshmallow==3.20.1
+
+# Environment and Configuration
+python-dotenv==1.0.0
+
+# AI and Machine Learning
+openai==1.3.7
+anthropic==0.7.8
+
+# Social Media APIs
+tweepy==4.14.0
+facebook-sdk==3.1.0
+python-linkedin==4.2
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+uuid==1.30
+
+# Development and Testing
+pytest==7.4.3
+pytest-flask==1.3.0
+pytest-cov==4.1.0
+
+# Logging and Monitoring
+structlog==23.2.0
