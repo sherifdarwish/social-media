@@ -1,0 +1,367 @@
+# Enhanced Social Media Agent Configuration
+# Configuration for the enhanced system with Generator and Evaluation agents
+
+# System Configuration
+system:
+  name: "Enhanced Social Media Agent"
+  version: "2.0.0-enhanced"
+  environment: "development"  # development, staging, production
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  
+# Database Configuration
+database:
+  type: "sqlite"  # sqlite, postgresql, mysql
+  path: "data/enhanced_agent.db"  # for sqlite
+  # For PostgreSQL/MySQL:
+  # host: "localhost"
+  # port: 5432
+  # username: "agent_user"
+  # password: "secure_password"
+  # database: "social_media_agent"
+
+# API Keys and Authentication
+api_keys:
+  # Text Generation LLMs
+  openai:
+    api_key: "${OPENAI_API_KEY}"
+    model: "gpt-4"
+    max_tokens: 2000
+    temperature: 0.7
+  
+  anthropic:
+    api_key: "${ANTHROPIC_API_KEY}"
+    model: "claude-3-sonnet-20240229"
+    max_tokens: 2000
+    temperature: 0.7
+  
+  google:
+    api_key: "${GOOGLE_AI_API_KEY}"
+    model: "gemini-pro"
+    max_tokens: 2000
+    temperature: 0.7
+  
+  # Image Generation
+  dalle:
+    api_key: "${OPENAI_API_KEY}"
+    model: "dall-e-3"
+    size: "1024x1024"
+    quality: "standard"
+  
+  midjourney:
+    api_key: "${MIDJOURNEY_API_KEY}"
+    # Configuration for Midjourney integration
+  
+  # Social Media Platform APIs
+  facebook:
+    app_id: "${FACEBOOK_APP_ID}"
+    app_secret: "${FACEBOOK_APP_SECRET}"
+    access_token: "${FACEBOOK_ACCESS_TOKEN}"
+    page_id: "${FACEBOOK_PAGE_ID}"
+  
+  twitter:
+    api_key: "${TWITTER_API_KEY}"
+    api_secret: "${TWITTER_API_SECRET}"
+    access_token: "${TWITTER_ACCESS_TOKEN}"
+    access_token_secret: "${TWITTER_ACCESS_TOKEN_SECRET}"
+    bearer_token: "${TWITTER_BEARER_TOKEN}"
+  
+  instagram:
+    access_token: "${INSTAGRAM_ACCESS_TOKEN}"
+    business_account_id: "${INSTAGRAM_BUSINESS_ACCOUNT_ID}"
+  
+  linkedin:
+    client_id: "${LINKEDIN_CLIENT_ID}"
+    client_secret: "${LINKEDIN_CLIENT_SECRET}"
+    access_token: "${LINKEDIN_ACCESS_TOKEN}"
+    organization_id: "${LINKEDIN_ORGANIZATION_ID}"
+  
+  tiktok:
+    app_id: "${TIKTOK_APP_ID}"
+    app_secret: "${TIKTOK_APP_SECRET}"
+    access_token: "${TIKTOK_ACCESS_TOKEN}"
+
+# Enhanced Team Leader Configuration
+team_leader:
+  reporting_schedule: "weekly"  # daily, weekly, monthly
+  coordination_interval: 3600  # seconds
+  performance_monitoring_interval: 1800  # seconds
+  brand_guidelines:
+    voice: "professional"  # casual, professional, friendly, authoritative
+    tone: "informative"   # informative, promotional, entertaining, inspirational
+    style: "modern"       # classic, modern, minimalist, bold
+    colors:
+      primary: "#1a73e8"
+      secondary: "#34a853"
+      accent: "#fbbc04"
+    fonts:
+      primary: "Roboto"
+      secondary: "Open Sans"
+
+# Generator Agent Configuration
+generator_agent:
+  enabled: true
+  content_generation:
+    default_count: 10
+    max_count: 50
+    content_types:
+      - "educational"
+      - "promotional"
+      - "entertaining"
+      - "inspirational"
+      - "news"
+      - "behind_the_scenes"
+    
+  business_analysis:
+    industry_research: true
+    competitor_analysis: true
+    trend_analysis: true
+    audience_insights: true
+  
+  content_strategy:
+    platform_optimization: true
+    hashtag_research: true
+    timing_optimization: true
+    engagement_prediction: true
+  
+  llm_providers:
+    primary: "openai"
+    fallback: ["anthropic", "google"]
+    image_generation: "dalle"
+
+# Evaluation Agent Configuration
+evaluation_agent:
+  enabled: true
+  feedback_processing:
+    real_time_analysis: true
+    batch_processing_interval: 300  # seconds
+    sentiment_analysis: true
+    pattern_recognition: true
+  
+  machine_learning:
+    model_update_frequency: "daily"  # hourly, daily, weekly
+    min_training_samples: 20
+    learning_rate: 0.1
+    auto_retrain: true
+  
+  recommendation_engine:
+    content_optimization: true
+    timing_suggestions: true
+    platform_specific_tips: true
+    audience_targeting: true
+  
+  performance_tracking:
+    metrics_collection: true
+    trend_analysis: true
+    predictive_analytics: true
+
+# Workflow Configuration
+workflow:
+  approval_required: true
+  auto_post_threshold: 0.8  # confidence score for auto-approval
+  approval_timeout: 24  # hours
+  retry_attempts: 3
+  
+  content_approval:
+    interface_enabled: true
+    interface_port: 5000
+    interface_host: "0.0.0.0"
+    session_timeout: 3600  # seconds
+  
+  posting_schedule:
+    timezone: "UTC"
+    default_intervals:
+      facebook: [9, 13, 17]  # hours
+      twitter: [8, 12, 16, 20]
+      instagram: [11, 15, 19]
+      linkedin: [8, 12, 17]
+      tiktok: [18, 20, 22]
+
+# Platform Agent Configuration
+platform_agents:
+  facebook:
+    enabled: true
+    posting_enabled: true
+    max_posts_per_day: 3
+    content_types: ["text", "image", "video", "link"]
+    character_limit: 2000
+    hashtag_limit: 30
+    
+  twitter:
+    enabled: true
+    posting_enabled: true
+    max_posts_per_day: 10
+    content_types: ["text", "image", "video"]
+    character_limit: 280
+    hashtag_limit: 10
+    thread_support: true
+    
+  instagram:
+    enabled: true
+    posting_enabled: true
+    max_posts_per_day: 2
+    content_types: ["image", "video", "story"]
+    character_limit: 2200
+    hashtag_limit: 30
+    story_enabled: true
+    
+  linkedin:
+    enabled: true
+    posting_enabled: true
+    max_posts_per_day: 2
+    content_types: ["text", "image", "video", "article"]
+    character_limit: 1300
+    hashtag_limit: 5
+    professional_focus: true
+    
+  tiktok:
+    enabled: true
+    posting_enabled: true
+    max_posts_per_day: 1
+    content_types: ["video"]
+    character_limit: 150
+    hashtag_limit: 10
+    video_requirements:
+      min_duration: 15  # seconds
+      max_duration: 180
+      aspect_ratio: "9:16"
+
+# Content Generation Configuration
+content_generation:
+  templates:
+    educational:
+      structure: "hook_content_cta"
+      tone: "informative"
+      length: "medium"
+    promotional:
+      structure: "benefit_proof_cta"
+      tone: "persuasive"
+      length: "short"
+    entertaining:
+      structure: "hook_story_engagement"
+      tone: "casual"
+      length: "short"
+    inspirational:
+      structure: "quote_story_motivation"
+      tone: "uplifting"
+      length: "medium"
+  
+  optimization:
+    seo_keywords: true
+    trending_hashtags: true
+    optimal_timing: true
+    audience_targeting: true
+    
+  quality_control:
+    grammar_check: true
+    brand_consistency: true
+    plagiarism_check: true
+    sentiment_analysis: true
+
+# Metrics and Analytics Configuration
+metrics:
+  collection_enabled: true
+  collection_interval: 300  # seconds
+  retention_period: 365  # days
+  
+  tracked_metrics:
+    - "engagement_rate"
+    - "reach"
+    - "impressions"
+    - "clicks"
+    - "shares"
+    - "comments"
+    - "likes"
+    - "saves"
+    - "follower_growth"
+    - "conversion_rate"
+  
+  reporting:
+    daily_summary: true
+    weekly_report: true
+    monthly_analysis: true
+    custom_reports: true
+    
+  alerts:
+    performance_drops: true
+    engagement_spikes: true
+    error_rates: true
+    threshold_breaches: true
+
+# Security Configuration
+security:
+  encryption:
+    enabled: true
+    algorithm: "AES-256"
+    key_rotation: "monthly"
+  
+  authentication:
+    session_timeout: 3600  # seconds
+    max_login_attempts: 5
+    lockout_duration: 900  # seconds
+  
+  api_security:
+    rate_limiting: true
+    cors_enabled: true
+    allowed_origins: ["*"]  # Configure for production
+    
+  data_protection:
+    anonymization: true
+    retention_policy: true
+    gdpr_compliance: true
+
+# Integration Configuration
+integrations:
+  webhooks:
+    enabled: true
+    endpoints:
+      approval_notifications: "https://your-domain.com/webhooks/approvals"
+      performance_alerts: "https://your-domain.com/webhooks/alerts"
+  
+  external_apis:
+    analytics_tools: true
+    crm_integration: true
+    email_marketing: true
+    
+  export_formats:
+    - "json"
+    - "csv"
+    - "pdf"
+    - "excel"
+
+# Development and Testing Configuration
+development:
+  debug_mode: true
+  test_mode: false
+  mock_apis: false
+  
+  testing:
+    unit_tests: true
+    integration_tests: true
+    performance_tests: true
+    
+  logging:
+    file_logging: true
+    console_logging: true
+    log_rotation: true
+    max_log_size: "100MB"
+    backup_count: 5
+
+# Deployment Configuration
+deployment:
+  environment: "development"
+  scaling:
+    auto_scaling: false
+    min_instances: 1
+    max_instances: 5
+  
+  monitoring:
+    health_checks: true
+    performance_monitoring: true
+    error_tracking: true
+    
+  backup:
+    enabled: true
+    frequency: "daily"
+    retention: 30  # days
+    storage: "local"  # local, s3, gcs
+

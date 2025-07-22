@@ -1,0 +1,257 @@
+# Social Media Agent System Configuration
+# Copy this file to config/config.yaml and fill in your actual values
+
+# LLM Provider Configuration
+llm_providers:
+  openai:
+    api_key: "your-openai-api-key-here"
+    api_base: "https://api.openai.com/v1"
+    models:
+      text: "gpt-4-turbo-preview"
+      image: "dall-e-3"
+    rate_limits:
+      requests_per_minute: 60
+      tokens_per_minute: 150000
+  
+  anthropic:
+    api_key: "your-anthropic-api-key-here"
+    api_base: "https://api.anthropic.com"
+    models:
+      text: "claude-3-opus-20240229"
+    rate_limits:
+      requests_per_minute: 50
+      tokens_per_minute: 100000
+  
+  stability:
+    api_key: "your-stability-api-key-here"
+    api_base: "https://api.stability.ai"
+    models:
+      image: "stable-diffusion-xl-1024-v1-0"
+    rate_limits:
+      requests_per_minute: 30
+
+# Social Media Platform Configuration
+platforms:
+  facebook:
+    app_id: "your-facebook-app-id"
+    app_secret: "your-facebook-app-secret"
+    access_token: "your-facebook-access-token"
+    page_id: "your-facebook-page-id"
+    api_version: "v18.0"
+    
+  twitter:
+    api_key: "your-twitter-api-key"
+    api_secret: "your-twitter-api-secret"
+    access_token: "your-twitter-access-token"
+    access_token_secret: "your-twitter-access-token-secret"
+    bearer_token: "your-twitter-bearer-token"
+    
+  instagram:
+    access_token: "your-instagram-access-token"
+    business_account_id: "your-instagram-business-account-id"
+    
+  linkedin:
+    client_id: "your-linkedin-client-id"
+    client_secret: "your-linkedin-client-secret"
+    access_token: "your-linkedin-access-token"
+    organization_id: "your-linkedin-organization-id"
+    
+  tiktok:
+    app_id: "your-tiktok-app-id"
+    app_secret: "your-tiktok-app-secret"
+    access_token: "your-tiktok-access-token"
+
+# Agent Configuration
+agents:
+  team_leader:
+    name: "Social Media Team Leader"
+    enabled: true
+    schedule:
+      report_generation: "0 9 * * 1"  # Every Monday at 9 AM
+      coordination_check: "0 */6 * * *"  # Every 6 hours
+    responsibilities:
+      - "Coordinate platform agents"
+      - "Generate weekly reports"
+      - "Ensure brand consistency"
+      - "Monitor overall performance"
+    
+  facebook:
+    name: "Facebook Content Agent"
+    enabled: true
+    schedule:
+      posting: "0 10,14,18 * * *"  # 10 AM, 2 PM, 6 PM daily
+      engagement_check: "0 */2 * * *"  # Every 2 hours
+    content_types:
+      - "text_posts"
+      - "image_posts"
+      - "link_shares"
+      - "stories"
+    target_audience: "general_public"
+    
+  twitter:
+    name: "X (Twitter) Content Agent"
+    enabled: true
+    schedule:
+      posting: "0 8,12,16,20 * * *"  # 8 AM, 12 PM, 4 PM, 8 PM daily
+      engagement_check: "0 * * * *"  # Every hour
+    content_types:
+      - "tweets"
+      - "threads"
+      - "retweets_with_comment"
+      - "replies"
+    target_audience: "tech_savvy"
+    
+  instagram:
+    name: "Instagram Content Agent"
+    enabled: true
+    schedule:
+      posting: "0 11,17 * * *"  # 11 AM, 5 PM daily
+      stories: "0 9,15,21 * * *"  # 9 AM, 3 PM, 9 PM daily
+    content_types:
+      - "feed_posts"
+      - "stories"
+      - "reels"
+      - "igtv"
+    target_audience: "visual_oriented"
+    
+  linkedin:
+    name: "LinkedIn Professional Agent"
+    enabled: true
+    schedule:
+      posting: "0 9,13 * * 1-5"  # 9 AM, 1 PM on weekdays
+      networking: "0 10 * * 1-5"  # 10 AM on weekdays
+    content_types:
+      - "professional_posts"
+      - "articles"
+      - "company_updates"
+      - "industry_insights"
+    target_audience: "professionals"
+    
+  tiktok:
+    name: "TikTok Content Agent"
+    enabled: true
+    schedule:
+      posting: "0 15,19 * * *"  # 3 PM, 7 PM daily
+      trend_analysis: "0 */4 * * *"  # Every 4 hours
+    content_types:
+      - "short_videos"
+      - "trending_content"
+      - "challenges"
+      - "duets"
+    target_audience: "gen_z_millennials"
+
+# Content Generation Settings
+content:
+  brand_voice:
+    tone: "friendly_professional"
+    personality_traits:
+      - "innovative"
+      - "helpful"
+      - "authentic"
+      - "engaging"
+    avoid:
+      - "overly_promotional"
+      - "controversial_topics"
+      - "negative_sentiment"
+      
+  templates:
+    facebook:
+      post_length: "50-300"
+      hashtag_count: "2-5"
+      emoji_usage: "moderate"
+      
+    twitter:
+      post_length: "50-280"
+      hashtag_count: "1-3"
+      emoji_usage: "light"
+      
+    instagram:
+      post_length: "100-500"
+      hashtag_count: "10-30"
+      emoji_usage: "heavy"
+      
+    linkedin:
+      post_length: "100-1000"
+      hashtag_count: "3-10"
+      emoji_usage: "minimal"
+      
+    tiktok:
+      video_length: "15-60"
+      hashtag_count: "3-8"
+      emoji_usage: "moderate"
+      
+  content_categories:
+    - "product_updates"
+    - "industry_news"
+    - "behind_the_scenes"
+    - "user_generated_content"
+    - "educational_content"
+    - "entertainment"
+    - "company_culture"
+    - "customer_testimonials"
+
+# Metrics and Analytics
+metrics:
+  collection_interval: 3600  # seconds (1 hour)
+  retention_period: 365  # days
+  
+  kpis:
+    engagement_rate: true
+    reach: true
+    impressions: true
+    clicks: true
+    shares: true
+    comments: true
+    followers_growth: true
+    conversion_rate: true
+    
+  reporting:
+    weekly_report: true
+    monthly_summary: true
+    real_time_alerts: true
+    performance_thresholds:
+      engagement_rate_min: 2.0  # percentage
+      reach_growth_min: 5.0  # percentage weekly
+      
+# Database Configuration
+database:
+  url: "postgresql://user:password@localhost:5432/social_media_agent"
+  pool_size: 10
+  max_overflow: 20
+  
+# Redis Configuration (for caching and task queue)
+redis:
+  url: "redis://localhost:6379/0"
+  max_connections: 10
+  
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/social_media_agent.log"
+  max_file_size: "10MB"
+  backup_count: 5
+  
+# Security Settings
+security:
+  encrypt_api_keys: true
+  api_key_rotation_days: 90
+  session_timeout: 3600  # seconds
+  max_login_attempts: 5
+  
+# Feature Flags
+features:
+  a_b_testing: true
+  sentiment_analysis: true
+  trend_detection: true
+  auto_moderation: true
+  content_scheduling: true
+  cross_platform_posting: true
+  
+# Development Settings
+development:
+  debug: false
+  test_mode: false
+  mock_api_calls: false
+  dry_run: false
+
