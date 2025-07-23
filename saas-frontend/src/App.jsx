@@ -1,3 +1,9 @@
+import CampaignsPage from "./components/CampaignsPage.jsx"
+import AnalyticsPage from "./components/AnalyticsPage.jsx"
+import EnhancedContentApproval from "./components/EnhancedContentApproval.jsx"
+import EnhancedGeneratorInterface from "./components/EnhancedGeneratorInterface.jsx"
+import NotificationDropdown from "./components/NotificationDropdown.jsx"
+import AccountDropdown from "./components/AccountDropdown.jsx"
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button.jsx'
@@ -159,14 +165,8 @@ const Header = ({ user }) => {
         </div>
         
         <div className="flex items-center space-x-4">
-          <Button variant="outline" size="sm">
-            <Bell size={16} className="mr-2" />
-            Notifications
-          </Button>
-          <Button variant="outline" size="sm">
-            <Settings size={16} className="mr-2" />
-            Account
-          </Button>
+          <NotificationDropdown />
+          <AccountDropdown user={user} />
         </div>
       </div>
     </header>
@@ -598,15 +598,18 @@ const MainContent = ({ activeTab, user }) => {
       case 'dashboard':
         return <Dashboard />
       case 'generator':
-        return <GeneratorInterface />
+        return <EnhancedGeneratorInterface />
       case 'approval':
-        return <ContentApproval />
+        return <EnhancedContentApproval />
       case 'campaigns':
-        return <div>Campaigns content coming soon...</div>
+        return <CampaignsPage />
+        
       case 'analytics':
-        return <div>Analytics content coming soon...</div>
+        return <AnalyticsPage />
+        
       case 'settings':
-        return <div>Settings content coming soon...</div>
+        return <SettingsPage />
+        
       default:
         return <Dashboard />
     }

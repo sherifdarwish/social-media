@@ -1,0 +1,165 @@
+/* RTL (Right-to-Left) Support for Arabic */
+
+/* Base RTL styles */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl * {
+  direction: rtl;
+}
+
+/* Flex direction adjustments */
+.rtl .flex {
+  flex-direction: row-reverse;
+}
+
+.rtl .flex-col {
+  flex-direction: column;
+}
+
+/* Margin and padding adjustments */
+.rtl .ml-2 { margin-left: 0; margin-right: 0.5rem; }
+.rtl .mr-2 { margin-right: 0; margin-left: 0.5rem; }
+.rtl .ml-3 { margin-left: 0; margin-right: 0.75rem; }
+.rtl .mr-3 { margin-right: 0; margin-left: 0.75rem; }
+.rtl .ml-4 { margin-left: 0; margin-right: 1rem; }
+.rtl .mr-4 { margin-right: 0; margin-left: 1rem; }
+.rtl .ml-6 { margin-left: 0; margin-right: 1.5rem; }
+.rtl .mr-6 { margin-right: 0; margin-left: 1.5rem; }
+
+.rtl .pl-2 { padding-left: 0; padding-right: 0.5rem; }
+.rtl .pr-2 { padding-right: 0; padding-left: 0.5rem; }
+.rtl .pl-3 { padding-left: 0; padding-right: 0.75rem; }
+.rtl .pr-3 { padding-right: 0; padding-left: 0.75rem; }
+.rtl .pl-4 { padding-left: 0; padding-right: 1rem; }
+.rtl .pr-4 { padding-right: 0; padding-left: 1rem; }
+.rtl .pl-6 { padding-left: 0; padding-right: 1.5rem; }
+.rtl .pr-6 { padding-right: 0; padding-left: 1.5rem; }
+
+/* Border radius adjustments */
+.rtl .rounded-l { border-radius: 0; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; }
+.rtl .rounded-r { border-radius: 0; border-top-left-radius: 0.25rem; border-bottom-left-radius: 0.25rem; }
+
+/* Text alignment */
+.rtl .text-left { text-align: right; }
+.rtl .text-right { text-align: left; }
+
+/* Sidebar positioning */
+.rtl .sidebar {
+  right: 0;
+  left: auto;
+}
+
+/* Icon positioning in buttons */
+.rtl .btn-icon-left {
+  order: 2;
+}
+
+.rtl .btn-text {
+  order: 1;
+}
+
+/* Form inputs */
+.rtl input, .rtl textarea, .rtl select {
+  text-align: right;
+}
+
+/* Navigation adjustments */
+.rtl .nav-item {
+  text-align: right;
+}
+
+/* Card content */
+.rtl .card-content {
+  text-align: right;
+}
+
+/* Grid adjustments for RTL */
+.rtl .grid-cols-2 > *:first-child {
+  order: 2;
+}
+
+.rtl .grid-cols-2 > *:last-child {
+  order: 1;
+}
+
+/* Dropdown menus */
+.rtl .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+/* Tooltips */
+.rtl .tooltip {
+  right: 0;
+  left: auto;
+}
+
+/* Arabic font support */
+.rtl {
+  font-family: 'Segoe UI', 'Tahoma', 'Arial', 'Helvetica Neue', sans-serif;
+}
+
+/* Better Arabic text rendering */
+.rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6 {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.rtl p, .rtl span, .rtl div {
+  line-height: 1.6;
+}
+
+/* Button adjustments for RTL */
+.rtl button {
+  text-align: center;
+}
+
+.rtl .btn-with-icon {
+  flex-direction: row-reverse;
+}
+
+/* Table adjustments */
+.rtl table {
+  direction: rtl;
+}
+
+.rtl th, .rtl td {
+  text-align: right;
+}
+
+/* Modal and dialog adjustments */
+.rtl .modal-content {
+  text-align: right;
+}
+
+/* Breadcrumb adjustments */
+.rtl .breadcrumb {
+  flex-direction: row-reverse;
+}
+
+/* Progress bar adjustments */
+.rtl .progress-bar {
+  direction: ltr; /* Keep progress bars LTR for consistency */
+}
+
+/* Chart and graph adjustments */
+.rtl .chart-container {
+  direction: ltr; /* Keep charts LTR for data consistency */
+}
+
+/* Specific component adjustments */
+.rtl .sidebar-nav {
+  text-align: right;
+}
+
+.rtl .sidebar-nav .nav-link {
+  justify-content: flex-end;
+}
+
+.rtl .sidebar-nav .nav-icon {
+  margin-left: 0.75rem;
+  margin-right: 0;
+}
